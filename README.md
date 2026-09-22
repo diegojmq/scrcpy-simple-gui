@@ -91,7 +91,7 @@ part of this repository.
 
 ## 🇪🇸 Guía rápida (español)
 
-1. `npm install`
+1. `npm ci`  (instala las dependencias de forma segura; se prefiere sobre `npm install`)
 2. Descarga **scrcpy** y pon su contenido en una carpeta `scrcpy/` dentro del proyecto.
 3. `npm start` para ejecutar, o `npm run dist` para generar el `.exe` portable.
 4. En el teléfono: activa **Opciones de desarrollador** + **Depuración inalámbrica**,

@@ -10,5 +10,5 @@ If fso.FileExists(exe) Then
   sh.Run """" & exe & """ """ & dir & """", 1, False
 Else
   ' Primera vez: instalar dependencias (muestra consola solo esta vez)
-  sh.Run "cmd /c npm install && """ & exe & """ """ & dir & """", 1, False
+  sh.Run "cmd /c npm ci && """ & exe & """ """ & dir & """", 1, False
 End If
