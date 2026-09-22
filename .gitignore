@@ -1,0 +1,22 @@
+# Dependencias
+node_modules/
+
+# Salida de compilacion
+dist/
+build/
+
+# Binarios de scrcpy (cada usuario los descarga; ver README)
+scrcpy/
+
+# Config personal / runtime
+config.json
+dispositivo.txt
+*.log
+gui-error.txt
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Accesos directos locales
+*.lnk

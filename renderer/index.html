@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compartir Pantalla</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Encabezado -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo">📱→💻</div>
+        <div>
+          <h1 data-i18n="appTitle">Compartir Pantalla</h1>
+          <p class="sub" data-i18n="appSub">Teléfono → PC · WiFi o USB · con audio</p>
+        </div>
+      </div>
+      <div class="head-right">
+        <div class="lang">
+          <button data-lang="es" class="active">ES</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <div id="status" class="pill pill-off"><span class="dot"></span><span id="statusText">Desconectado</span></div>
+      </div>
+    </header>
+
+    <!-- Conexion -->
+    <section class="card">
+      <div class="card-title" data-i18n="connTitle">Conexión</div>
+
+      <div class="row">
+        <select id="devices" class="input grow"></select>
+        <button id="btnRefresh" class="btn ghost" data-i18n="refresh" data-i18n-title="refreshTip">Actualizar</button>
+      </div>
+      <p class="hint" data-i18n="usbHint">💡 ¿Por cable USB? Conecta el teléfono y pulsa “Actualizar”: aparecerá en la lista.</p>
+
+      <div class="step">
+        <span class="badge">1</span>
+        <div class="step-body">
+          <div class="step-label" data-i18n="step1">Uso diario — conectar y transmitir</div>
+          <div class="row">
+            <button id="btnAuto" class="btn primary grow" data-i18n="btnAuto" data-i18n-title="btnAutoTip">🔗 Conectar (automático)</button>
+            <label class="check"><input type="checkbox" id="autoReconnect" checked /> <span data-i18n="autoReconnect">Reconectar solo</span></label>
+          </div>
+        </div>
+      </div>
+
+      <button id="connToggle" class="conn-toggle"></button>
+
+      <div id="connMore" class="collapsed">
+        <div class="step">
+          <span class="badge">2</span>
+          <div class="step-body">
+            <div class="step-label" data-i18n="step2">Si no conecta (reinicio o IP nueva) — pega la “Dirección IP y puerto” del teléfono</div>
+            <div class="row">
+              <input id="manAddr" class="input grow" placeholder="192.168.1.40:41057" data-i18n-title="manTip" />
+              <button id="btnManual" class="btn ghost" data-i18n="btnManual" data-i18n-title="btnManualTip">Configurar (fija el 5555)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="badge">3</span>
+          <div class="step-body">
+            <div class="step-label" data-i18n="step3">Primera vez / si se desvinculó — pega IP:puerto + código del popup de vinculación</div>
+            <div class="row">
+              <input id="pairAddr" class="input" data-i18n-ph="pairAddrPh" placeholder="IP:puerto vinc." style="max-width:170px" />
+              <input id="pairCode" class="input" data-i18n-ph="pairCodePh" placeholder="código" style="max-width:110px" />
+              <button id="btnPair" class="btn ghost" data-i18n="btnPair" data-i18n-title="btnPairTip">Vincular</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:10px; justify-content:flex-end">
+        <button id="btnSec" class="btn ghost warn" data-i18n="btnSec" data-i18n-title="btnSecTip">🛡 Seguridad</button>
+      </div>
+    </section>
+
+    <!-- Opciones -->
+    <section class="card">
+      <button id="optToggle" class="opt-toggle">
+        <span><span data-i18n="optTitle">⚙️ Opciones de transmisión</span> <span class="opt-hint" data-i18n="optHint">(video, audio, calidad…)</span></span>
+        <span id="optArrow" class="opt-arrow">▸</span>
+      </button>
+
+      <div id="optBody" class="opts-collapsed">
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-tab="video" data-i18n="tabVideo">Video</button>
+          <button class="tab" data-tab="audio" data-i18n="tabAudio">Audio</button>
+          <button class="tab" data-tab="control" data-i18n="tabControl">Control</button>
+          <button class="tab" data-tab="ventana" data-i18n="tabWindow">Ventana</button>
+          <button class="tab" data-tab="grabar" data-i18n="tabRecord">Grabar</button>
+        </div>
+
+        <!-- Video -->
+        <div class="panel active" data-panel="video">
+          <div class="field"><label data-i18n="lblCodec">Códec</label>
+            <select id="codec" class="input">
+              <option value="h264" data-i18n="codecH264">H.264 (rápido)</option>
+              <option value="h265" data-i18n="codecH265">H.265 (mejor calidad)</option>
+              <option value="av1">AV1</option>
+            </select>
+          </div>
+          <div class="field"><label data-i18n="lblRes">Resolución (lado máx)</label>
+            <select id="res" class="input">
+              <option value="Nativa" data-i18n="resNative">Nativa</option>
+              <option value="1920">1920</option><option value="1280" selected>1280</option>
+              <option value="1024">1024</option><option value="800">800</option><option value="640">640</option>
+            </select>
+          </div>
+          <div class="field"><label data-i18n="lblFps">FPS máximo</label><input id="fps" class="input" value="60" /></div>
+          <div class="field"><label data-i18n="lblBitrate">Bitrate video (Mbps)</label><input id="bitrate" class="input" value="8" /></div>
+          <div class="field"><label data-i18n="lblOrient">Orientación</label>
+            <select id="orient" class="input">
+              <option value="Automática" data-i18n="orientAuto">Automática</option>
+              <option value="0">0°</option><option value="90">90°</option><option value="180">180°</option><option value="270">270°</option>
+            </select>
+          </div>
+          <label class="check"><input type="checkbox" id="noVideo" /> <span data-i18n="noVideo">Solo audio (sin video)</span></label>
+        </div>
+
+        <!-- Audio -->
+        <div class="panel" data-panel="audio">
+          <label class="check big"><input type="checkbox" id="audio" checked /> <span data-i18n="audioTransmit">Transmitir audio</span></label>
+          <div class="field"><label data-i18n="lblSource">Fuente</label>
+            <select id="audioSrc" class="input">
+              <option value="output" data-i18n="srcInternal">Interno del teléfono (output)</option>
+              <option value="mic" data-i18n="srcMic">Micrófono (mic)</option>
+              <option value="playback">Playback</option>
+            </select>
+          </div>
+          <div class="field"><label data-i18n="lblAudioCodec">Códec</label>
+            <select id="audioCodec" class="input"><option>opus</option><option>aac</option><option>flac</option></select>
+          </div>
+          <div class="field"><label data-i18n="lblAudioBr">Bitrate audio (kbps)</label><input id="audioBr" class="input" value="128" /></div>
+          <p class="hint" data-i18n="audioHint">“Interno” no funciona en algunos juegos con DRM; usa Micrófono en ese caso.</p>
+        </div>
+
+        <!-- Control -->
+        <div class="panel" data-panel="control">
+          <label class="check"><input type="checkbox" id="noControl" /> <span data-i18n="ctlNoControl">Solo ver (sin controlar el teléfono)</span></label>
+          <label class="check"><input type="checkbox" id="screenOff" /> <span data-i18n="ctlScreenOff">Apagar pantalla del teléfono (privado)</span></label>
+          <label class="check"><input type="checkbox" id="awake" checked /> <span data-i18n="ctlAwake">Mantener el teléfono despierto</span></label>
+          <label class="check"><input type="checkbox" id="touches" /> <span data-i18n="ctlTouches">Mostrar toques en pantalla</span></label>
+          <label class="check"><input type="checkbox" id="powerOff" /> <span data-i18n="ctlPowerOff">Apagar el teléfono al cerrar</span></label>
+        </div>
+
+        <!-- Ventana -->
+        <div class="panel" data-panel="ventana">
+          <label class="check"><input type="checkbox" id="fullscreen" /> <span data-i18n="winFull">Pantalla completa</span></label>
+          <label class="check"><input type="checkbox" id="alwaysTop" /> <span data-i18n="winTop">Siempre encima</span></label>
+          <label class="check"><input type="checkbox" id="borderless" /> <span data-i18n="winBorderless">Sin bordes</span></label>
+          <label class="check"><input type="checkbox" id="noScreensaver" checked /> <span data-i18n="winNoSaver">Evitar protector de pantalla del PC</span></label>
+          <div class="field"><label data-i18n="lblWinTitle">Título de la ventana</label><input id="winTitle" class="input" value="Compartir Pantalla" /></div>
+        </div>
+
+        <!-- Grabar -->
+        <div class="panel" data-panel="grabar">
+          <label class="check big"><input type="checkbox" id="record" /> <span data-i18n="recEnable">Grabar la transmisión a un archivo</span></label>
+          <div class="field"><label data-i18n="lblRecFile">Archivo</label>
+            <div class="row"><input id="recFile" class="input grow" /><button id="btnBrowse" class="btn ghost" data-i18n="browse">Examinar</button></div>
+          </div>
+          <p class="hint" data-i18n="recHint">Puedes grabar y ver al mismo tiempo. El formato se toma de la extensión (.mp4 / .mkv).</p>
+        </div>
+      </div><!-- /optBody -->
+    </section>
+
+    <!-- Iniciar -->
+    <button id="btnStart" class="btn primary start" data-i18n="btnStart">▶  Iniciar transmisión</button>
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <!-- Overlay amable -->
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-box">
+      <div class="phone-anim">
+        <span class="p-phone">📱</span>
+        <span class="p-dots"><i></i><i></i><i></i></span>
+        <span class="p-pc">💻</span>
+      </div>
+      <div id="overlayText" class="overlay-text">Conectando con tu teléfono…</div>
+      <div class="overlay-sub" data-i18n="overlaySub">Esto es seguro · todo ocurre en tu red local</div>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

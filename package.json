@@ -1,0 +1,49 @@
+{
+  "name": "compartir-pantalla",
+  "version": "1.0.0",
+  "description": "Compartir pantalla del telefono a la PC (scrcpy) con interfaz moderna",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "Diego",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.diego.compartirpantalla",
+    "productName": "Compartir Pantalla",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "renderer/**/*", "package.json"],
+    "extraResources": [
+      {
+        "from": "../scrcpy",
+        "to": "scrcpy",
+        "filter": [
+          "**/*",
+          "!dispositivo.txt",
+          "!config.txt",
+          "!config.json",
+          "!gui-error.txt",
+          "!scrcpy-gui.ps1",
+          "!Jugar-scrcpy.bat",
+          "!Interfaz-scrcpy.bat",
+          "!Interfaz.vbs",
+          "!Receptor*.*",
+          "!Iniciar-Receptor.bat",
+          "!COMO-USAR.txt"
+        ]
+      }
+    ],
+    "win": {
+      "target": ["portable"],
+      "artifactName": "CompartirPantalla-portable.exe"
+    },
+    "portable": {
+      "artifactName": "CompartirPantalla-portable.exe"
+    }
+  }
+}
