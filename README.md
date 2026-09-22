@@ -31,11 +31,17 @@ _Add a screenshot here (e.g. `docs/screenshot.png`)._
 
 ## 🚀 Run from source
 
+Requires **Node.js 22 LTS or newer**.
+
 ```bash
-git clone https://github.com/diegojmq/<repo>.git
-cd <repo>
-npm install
+git clone https://github.com/diegojmq/scrcpy-simple-gui.git
+cd scrcpy-simple-gui
+npm ci        # strict, integrity-verified install (preferred over npm install)
 ```
+
+> 🔒 See [SECURITY.md](SECURITY.md) for how this project protects against npm
+> supply-chain attacks (exact pinned versions, committed lockfile, `npm ci`,
+> 0 known vulnerabilities, minimal dependencies).
 
 Then get **scrcpy** (which includes `adb.exe`) and put its contents in a
 `scrcpy/` folder inside the project:
