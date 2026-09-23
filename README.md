@@ -10,6 +10,15 @@ scrcpy's power without the command line.
 
 Bilingual UI (English / Spanish) · dark theme · one‑click connect.
 
+## ⬇️ Download / Descargar
+
+**[⬇️ Download the ready‑to‑use app (.exe)](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)** — just double‑click, no install, scrcpy included.
+
+> 🇪🇸 **[⬇️ Descarga la app lista para usar (.exe)](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)** — doble clic y listo, sin instalar nada.
+>
+> ❗ Do **not** use the green *Code → Download ZIP* button — that's the source code
+> (for developers) and won't run on its own. Use the **Releases** download above.
+
 ---
 
 ## ✨ Features
