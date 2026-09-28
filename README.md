@@ -47,8 +47,17 @@ apps — it is **not malware**. To be sure you can:
 - Verify your download with the **SHA-256** shown on the Releases page.
 - Scan the file on [VirusTotal](https://www.virustotal.com/).
 
-The warning only disappears completely with a **paid code-signing certificate** or by
-publishing through the **Microsoft Store**.
+### 💡 Open it with NO warning (recommended)
+
+Windows only warns because the file was *"downloaded from the internet"*. Remove that
+mark and it opens cleanly, just like a local file:
+
+1. **Right-click** the downloaded `.zip` → **Properties**.
+2. Check **☑ Unblock** (bottom-right) → **OK**.
+3. **Now** extract it and run `Compartir Pantalla.exe` — no SmartScreen warning.
+
+> A signed certificate or the Microsoft Store would remove the warning for everyone
+> automatically, but "Unblock" is the free way and works the same.
 
 ## ✅ Requirements
 
@@ -175,8 +184,17 @@ firmar — **no es un virus**. Para estar seguro puedes:
 - Verificar la descarga con el **SHA-256** que aparece en el Release.
 - Analizar el archivo en [VirusTotal](https://www.virustotal.com/).
 
-El aviso solo desaparece del todo con un **certificado de firma** (pago) o
-publicando en la **Microsoft Store**.
+### 💡 Ábrelo SIN ningún aviso (recomendado)
+
+Windows solo avisa porque el archivo fue *"descargado de internet"*. Quita esa marca y
+se abre limpio, igual que un archivo local:
+
+1. **Clic derecho** en el `.zip` descargado → **Propiedades**.
+2. Marca **☑ Desbloquear** (abajo a la derecha) → **Aceptar**.
+3. **Ahora** descomprímelo y ejecuta `Compartir Pantalla.exe` — sin aviso de SmartScreen.
+
+> Un certificado de firma o la Microsoft Store quitarían el aviso automáticamente para
+> todos, pero "Desbloquear" es la forma gratis y funciona igual.
 
 ## ✅ Requisitos
 
