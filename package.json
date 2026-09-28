@@ -50,12 +50,10 @@
     ],
     "win": {
       "target": [
+        "zip",
         "portable"
       ],
-      "artifactName": "CompartirPantalla-portable.exe"
-    },
-    "portable": {
-      "artifactName": "CompartirPantalla-portable.exe"
+      "artifactName": "CompartirPantalla-${version}.${ext}"
     }
   }
 }
