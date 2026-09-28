@@ -12,12 +12,49 @@ Bilingual UI (English / Spanish) · dark theme · one‑click connect.
 
 ## ⬇️ Download / Descargar
 
-**[⬇️ Download the ready‑to‑use app (.exe)](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)** — just double‑click, no install, scrcpy included.
+**[⬇️ Download from Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)** → get **`CompartirPantalla-<version>.zip`**, extract it, and run **`Compartir Pantalla.exe`** (just like scrcpy). No install, scrcpy is included.
 
-> 🇪🇸 **[⬇️ Descarga la app lista para usar (.exe)](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)** — doble clic y listo, sin instalar nada.
+> 🇪🇸 **[⬇️ Descarga desde Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)** → baja **`CompartirPantalla-<versión>.zip`**, descomprímelo y ejecuta **`Compartir Pantalla.exe`** (igual que scrcpy). Sin instalar nada.
 >
-> ❗ Do **not** use the green *Code → Download ZIP* button — that's the source code
-> (for developers) and won't run on its own. Use the **Releases** download above.
+> ❗ Do **not** use the green *Code → Download ZIP* button — that's source code (for developers).
+
+## 🛡️ Is it safe? Why does Windows/antivirus warn? / ¿Es seguro? ¿Por qué avisa Windows/el antivirus?
+
+**English** — Yes, it's safe. This app is **open source**, but it is **not
+code‑signed** (a signing certificate costs money). Because of that, when you open it:
+
+- **Windows SmartScreen** may show *"Windows protected your PC — unknown publisher"*.
+  → Click **More info → Run anyway**.
+- Some **antivirus** engines may flag it as *potentially unwanted (PUA)*. This is a
+  **false positive**, mostly because the app bundles Google's `adb.exe` (a
+  legitimate Android tool). Allow it / add an exception if needed.
+
+This is **exactly what happens with scrcpy itself** and most unsigned open‑source
+apps — it is **not malware**. To be sure, you can:
+- Read all the source code in this repo.
+- Verify your download with the **SHA‑256** shown on the [Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest) page.
+- Scan the file on [VirusTotal](https://www.virustotal.com/).
+
+The warning only disappears completely with a **paid code‑signing certificate** or
+by publishing through the **Microsoft Store**.
+
+**Español** — Sí, es seguro. La app es de **código abierto**, pero **no está firmada
+digitalmente** (el certificado cuesta dinero). Por eso, al abrirla:
+
+- **Windows SmartScreen** puede decir *"Windows protegió tu PC — editor desconocido"*.
+  → Pulsa **Más información → Ejecutar de todas formas**.
+- Algún **antivirus** puede marcarla como *no deseada (PUA)*. Es un **falso
+  positivo**, sobre todo porque incluye `adb.exe` de Google (herramienta legítima de
+  Android). Permítela / agrega una excepción si hace falta.
+
+Es **justo lo que pasa con el propio scrcpy** y casi todas las apps open‑source sin
+firmar — **no es un virus**. Para estar seguro puedes:
+- Leer todo el código en este repositorio.
+- Verificar la descarga con el **SHA‑256** que aparece en [Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest).
+- Analizar el archivo en [VirusTotal](https://www.virustotal.com/).
+
+El aviso solo desaparece del todo con un **certificado de firma** (pago) o la
+**Microsoft Store**.
 
 ---
 
