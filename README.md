@@ -75,9 +75,20 @@ _Add a screenshot here (e.g. `docs/screenshot.png`)._
 
 ---
 
-## 🚀 Run from source
+## 🚀 Run from source — FOR DEVELOPERS ONLY / SOLO PARA DESARROLLADORES
 
-Requires **Node.js 22 LTS or newer**.
+> 🇬🇧 **Normal users: skip this section.** You do **not** need Node, `npm`, or any of
+> these commands. Just download the app from
+> [Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest),
+> extract the `.zip`, and run `Compartir Pantalla.exe`.
+>
+> 🇪🇸 **Usuarios normales: sáltense esta sección.** **No** necesitan Node, `npm`, ni
+> estos comandos. Solo descarguen la app desde
+> [Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest),
+> descompriman el `.zip` y ejecuten `Compartir Pantalla.exe`.
+
+The steps below (`npm ci`, `npm start`, `npm run dist`) are only if you want to
+**modify or build the app yourself**. Requires **Node.js 22 LTS or newer**.
 
 ```bash
 git clone https://github.com/diegojmq/scrcpy-simple-gui.git
@@ -135,10 +146,15 @@ part of this repository.
 
 ---
 
-## 🇪🇸 Guía rápida (español)
+## 🇪🇸 Guía rápida
 
-1. `npm ci`  (instala las dependencias de forma segura; se prefiere sobre `npm install`)
-2. Descarga **scrcpy** y pon su contenido en una carpeta `scrcpy/` dentro del proyecto.
-3. `npm start` para ejecutar, o `npm run dist` para generar el `.exe` portable.
-4. En el teléfono: activa **Opciones de desarrollador** + **Depuración inalámbrica**,
+### Para USAR la app (usuarios) — sin instalar nada
+1. Descarga el **`.zip`** desde [Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest).
+2. Descomprímelo y ejecuta **`Compartir Pantalla.exe`**.
+3. En el teléfono: activa **Opciones de desarrollador** + **Depuración inalámbrica**,
    **vincula** una vez con el código, y luego **Conectar (automático)** → **Iniciar transmisión**.
+
+### Para COMPILAR desde el código (desarrolladores)
+1. `npm ci`  (instala dependencias de forma segura; preferido sobre `npm install`)
+2. Descarga **scrcpy** y pon su contenido en una carpeta `scrcpy/` dentro del proyecto.
+3. `npm start` para ejecutar, o `npm run dist` para generar el `.zip` / `.exe`.
