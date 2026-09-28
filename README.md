@@ -19,15 +19,15 @@ scrcpy, sin línea de comandos.
 
 1. Go to **[Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)**.
 2. Download **`CompartirPantalla-<version>.zip`** (under *Assets*).
-3. **Extract** it anywhere and run **`Compartir Pantalla.exe`** — just like scrcpy.
+3. **Extract** it, open the **`CompartirPantalla`** folder, and run **`Compartir Pantalla.vbs`** — just like scrcpy.
 
 No installation, no Node.js, no separate scrcpy download — everything is bundled.
 
+> ✅ This build launches through the **original, recognized `electron.exe`** (via the
+> `.vbs`), so **antivirus generally does not flag it**.
+>
 > ❗ Do **not** use the green **Code → Download ZIP** button. That is the *source
 > code* (for developers) and will not run on its own.
-
-There is also a single-file `CompartirPantalla-<version>.exe` (portable) if you
-prefer one file instead of a folder.
 
 ## 🛡️ Is it safe? Why does Windows / antivirus warn?
 
@@ -156,15 +156,15 @@ of this repository.
 
 1. Entra a **[Releases](https://github.com/diegojmq/scrcpy-simple-gui/releases/latest)**.
 2. Descarga **`CompartirPantalla-<versión>.zip`** (en *Assets*).
-3. **Descomprímelo** donde quieras y ejecuta **`Compartir Pantalla.exe`** — igual que scrcpy.
+3. **Descomprímelo**, abre la carpeta **`CompartirPantalla`** y ejecuta **`Compartir Pantalla.vbs`** — igual que scrcpy.
 
 Sin instalación, sin Node.js, sin descargar scrcpy aparte — todo va incluido.
 
+> ✅ Esta versión se abre con el **`electron.exe` original** (mediante el `.vbs`), por lo
+> que **el antivirus normalmente no lo detecta**.
+>
 > ❗ **No** uses el botón verde **Code → Download ZIP**. Eso es el *código fuente*
 > (para desarrolladores) y no funciona por sí solo.
-
-También hay un `CompartirPantalla-<versión>.exe` de un solo archivo (portable) si
-prefieres un archivo en vez de una carpeta.
 
 ## 🛡️ ¿Es seguro? ¿Por qué avisa Windows / el antivirus?
 
